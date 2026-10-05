@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>JOptionPanePay.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+JOptionPanePay.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">javax</span><span class="s2">.</span><span class="s1">swing</span><span class="s2">.</span><span class="s1">JOptionPane</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">JOptionPanePay </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+
+        <span class="s0">double </span><span class="s1">rate </span><span class="s2">= </span><span class="s1">Double</span><span class="s2">.</span><span class="s1">parseDouble</span><span class="s2">(</span><span class="s1">JOptionPane</span><span class="s2">.</span><span class="s1">showInputDialog</span><span class="s2">(</span><span class="s3">&quot;Enter hourly pay rate:&quot;</span><span class="s2">));</span>
+
+        <span class="s0">double </span><span class="s1">hours </span><span class="s2">= </span><span class="s1">Double</span><span class="s2">.</span><span class="s1">parseDouble</span><span class="s2">(</span><span class="s1">JOptionPane</span><span class="s2">.</span><span class="s1">showInputDialog</span><span class="s2">(</span><span class="s3">&quot;Enter hours worked: &quot;</span><span class="s2">));</span>
+
+        <span class="s0">double </span><span class="s1">grossPay </span><span class="s2">= </span><span class="s1">rate </span><span class="s2">* </span><span class="s1">hours</span><span class="s2">;</span>
+        <span class="s0">double </span><span class="s1">taxRate</span><span class="s2">;</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">grossPay </span><span class="s2">&lt;= </span><span class="s4">2000</span><span class="s2">) {</span>
+            <span class="s1">taxRate </span><span class="s2">= </span><span class="s4">0.10</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">grossPay </span><span class="s2">&lt;= </span><span class="s4">4000</span><span class="s2">) {</span>
+            <span class="s1">taxRate </span><span class="s2">= </span><span class="s4">0.12</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">grossPay </span><span class="s2">&lt;= </span><span class="s4">10000</span><span class="s2">) {</span>
+            <span class="s1">taxRate </span><span class="s2">= </span><span class="s4">0.15</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">taxRate </span><span class="s2">= </span><span class="s4">0.20</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">double </span><span class="s1">withholdingTax </span><span class="s2">= </span><span class="s1">grossPay </span><span class="s2">* </span><span class="s1">taxRate</span><span class="s2">;</span>
+        <span class="s0">double </span><span class="s1">netPay </span><span class="s2">= </span><span class="s1">grossPay </span><span class="s2">- </span><span class="s1">withholdingTax</span><span class="s2">;</span>
+
+        <span class="s1">String result </span><span class="s2">= </span><span class="s1">String</span><span class="s2">.</span><span class="s1">format</span><span class="s2">(</span><span class="s3">&quot;==== PAY SLIP =====</span><span class="s0">\n</span><span class="s3">&quot; </span><span class="s2">+ </span><span class="s3">&quot;Gross Pay: Php%.2f</span><span class="s0">\n</span><span class="s3">&quot; </span><span class="s2">+ </span><span class="s3">&quot;Tax Rate: %.0f%%</span><span class="s0">\n</span><span class="s3">&quot; </span><span class="s2">+ </span><span class="s3">&quot;Withholding Tax: Php%.2f</span><span class="s0">\n</span><span class="s3">&quot; </span><span class="s2">+ </span><span class="s3">&quot;Net Pay: Php %.2f&quot;</span><span class="s2">, </span><span class="s1">grossPay</span><span class="s2">, </span><span class="s1">taxRate </span><span class="s2">* </span><span class="s4">100</span><span class="s2">, </span><span class="s1">withholdingTax</span><span class="s2">, </span><span class="s1">netPay</span><span class="s2">);</span>
+
+            <span class="s1">JOptionPane</span><span class="s2">.</span><span class="s1">showMessageDialog</span><span class="s2">(</span><span class="s0">null</span><span class="s2">, </span><span class="s1">result</span><span class="s2">);</span>
+
+    <span class="s2">}</span>
+
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>ScannerPay.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ScannerPay.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">ScannerPay </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+
+        <span class="s1">Scanner sc </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Enter hourly pay rate: &quot;</span><span class="s2">);</span>
+        <span class="s0">double </span><span class="s1">rate </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">();</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Enter hours worked: &quot;</span><span class="s2">);</span>
+        <span class="s0">double </span><span class="s1">hours </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">();</span>
+
+        <span class="s0">double </span><span class="s1">grossPay </span><span class="s2">= </span><span class="s1">rate </span><span class="s2">* </span><span class="s1">hours</span><span class="s2">;</span>
+        <span class="s0">double </span><span class="s1">taxRate</span><span class="s2">;</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">grossPay </span><span class="s2">&lt;= </span><span class="s4">2000</span><span class="s2">) {</span>
+            <span class="s1">taxRate </span><span class="s2">= </span><span class="s4">0.10</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">grossPay </span><span class="s2">&lt;= </span><span class="s4">4000</span><span class="s2">) {</span>
+            <span class="s1">taxRate </span><span class="s2">= </span><span class="s4">0.12</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">grossPay </span><span class="s2">&lt;= </span><span class="s4">10000</span><span class="s2">) {</span>
+            <span class="s1">taxRate </span><span class="s2">= </span><span class="s4">0.15</span><span class="s2">;</span>
+        <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">taxRate </span><span class="s2">= </span><span class="s4">0.20</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">double </span><span class="s1">withholdingTax </span><span class="s2">= </span><span class="s1">grossPay </span><span class="s2">* </span><span class="s1">taxRate</span><span class="s2">;</span>
+        <span class="s0">double </span><span class="s1">netPay </span><span class="s2">= </span><span class="s1">grossPay </span><span class="s2">- </span><span class="s1">withholdingTax</span><span class="s2">;</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot; n===== PAY SLIP ===== &quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">printf</span><span class="s2">(</span><span class="s3">&quot;Gross Pay: Php%.2f%n&quot;</span><span class="s2">, </span><span class="s1">grossPay</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">printf</span><span class="s2">(</span><span class="s3">&quot;Tax Rate: %.0f%%%n&quot;</span><span class="s2">, </span><span class="s1">taxRate </span><span class="s2">* </span><span class="s4">100</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">printf</span><span class="s2">(</span><span class="s3">&quot;Withholding Tax: Php %.2f%n&quot;</span><span class="s2">, </span><span class="s1">withholdingTax</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">printf</span><span class="s2">(</span><span class="s3">&quot;Net Pay: Php%.2f%n&quot;</span><span class="s2">, </span><span class="s1">netPay</span><span class="s2">);</span>
+
+        <span class="s1">sc</span><span class="s2">.</span><span class="s1">close</span><span class="s2">();</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+</pre>
+</body>
+</html>
