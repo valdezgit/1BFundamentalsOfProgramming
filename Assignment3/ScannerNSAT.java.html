@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>ScannerNSAT.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ScannerNSAT.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">ScannerNSAT </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+
+        <span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner input </span><span class="s2">= </span><span class="s0">new </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Enter NSAT score: &quot;</span><span class="s2">);</span>
+        <span class="s0">double </span><span class="s1">nsat </span><span class="s2">= </span><span class="s1">input</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">();</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Enter parents' monthly salary: &quot;</span><span class="s2">);</span>
+        <span class="s0">double </span><span class="s1">salary </span><span class="s2">= </span><span class="s1">input</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">();</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s3">&quot;Enter entrance exam score: &quot;</span><span class="s2">);</span>
+        <span class="s0">double </span><span class="s1">entrance </span><span class="s2">= </span><span class="s1">input</span><span class="s2">.</span><span class="s1">nextDouble</span><span class="s2">();</span>
+
+        <span class="s0">double </span><span class="s1">average </span><span class="s2">= (</span><span class="s1">nsat </span><span class="s2">+ </span><span class="s1">entrance</span><span class="s2">) / </span><span class="s4">2</span><span class="s2">;</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">salary </span><span class="s2">&gt; </span><span class="s4">10000 </span><span class="s2">|| </span><span class="s1">nsat </span><span class="s2">&lt; </span><span class="s4">90 </span><span class="s2">|| </span><span class="s1">entrance </span><span class="s2">&lt; </span><span class="s4">85</span><span class="s2">) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">((</span><span class="s3">&quot;Application Status: REJECTED &quot;</span><span class="s2">));</span>
+        <span class="s2">}</span>
+        <span class="s0">else if </span><span class="s2">(</span><span class="s1">salary </span><span class="s2">&lt;= </span><span class="s4">3500 </span><span class="s2">&amp;&amp; </span><span class="s1">average </span><span class="s2">&gt;= </span><span class="s4">91</span><span class="s2">) {</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Application Status: ACCEPTED &quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        <span class="s0">else </span><span class="s2">{</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Application Status: FOR FURTHER STUDY &quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        <span class="s1">input</span><span class="s2">.</span><span class="s1">close</span><span class="s2">();</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+
+
+</pre>
+</body>
+</html>

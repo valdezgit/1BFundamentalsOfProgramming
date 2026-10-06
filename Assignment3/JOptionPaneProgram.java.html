@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>JOptionPaneProgram.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+JOptionPaneProgram.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">javax</span><span class="s2">.</span><span class="s1">swing</span><span class="s2">.</span><span class="s1">JOptionPane</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">JOptionPaneProgram </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+
+        <span class="s0">double </span><span class="s1">nsat </span><span class="s2">= </span><span class="s1">Double</span><span class="s2">.</span><span class="s1">parseDouble</span><span class="s2">(</span><span class="s1">JOptionPane</span><span class="s2">.</span><span class="s1">showInputDialog</span><span class="s2">(</span><span class="s3">&quot;Enter NSAT score: &quot;</span><span class="s2">));</span>
+
+        <span class="s0">double </span><span class="s1">salary </span><span class="s2">= </span><span class="s1">Double</span><span class="s2">.</span><span class="s1">parseDouble</span><span class="s2">(</span><span class="s1">JOptionPane</span><span class="s2">.</span><span class="s1">showInputDialog</span><span class="s2">(</span><span class="s3">&quot;Enter NSAT score: &quot;</span><span class="s2">));</span>
+
+        <span class="s0">double </span><span class="s1">entrance </span><span class="s2">= </span><span class="s1">Double</span><span class="s2">.</span><span class="s1">parseDouble</span><span class="s2">(</span><span class="s1">JOptionPane</span><span class="s2">.</span><span class="s1">showInputDialog</span><span class="s2">(</span><span class="s3">&quot;Enter parents' monthly salary: &quot;</span><span class="s2">));</span>
+
+        <span class="s0">double </span><span class="s1">average </span><span class="s2">= (</span><span class="s1">nsat </span><span class="s2">+ </span><span class="s1">entrance</span><span class="s2">) / </span><span class="s4">2</span><span class="s2">;</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">salary </span><span class="s2">&gt; </span><span class="s4">10000 </span><span class="s2">|| </span><span class="s1">nsat </span><span class="s2">&lt; </span><span class="s4">90 </span><span class="s2">|| </span><span class="s1">entrance </span><span class="s2">&lt; </span><span class="s4">85</span><span class="s2">) {</span>
+            <span class="s1">JOptionPane</span><span class="s2">.</span><span class="s1">showMessageDialog</span><span class="s2">(</span><span class="s0">null</span><span class="s2">, </span><span class="s3">&quot;Application Status: REJECTED &quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s0">else if </span><span class="s2">(</span><span class="s1">salary </span><span class="s2">&lt;= </span><span class="s4">3500 </span><span class="s2">&amp;&amp; </span><span class="s1">average </span><span class="s2">&gt;= </span><span class="s4">91</span><span class="s2">) {</span>
+            <span class="s1">JOptionPane</span><span class="s2">.</span><span class="s1">showMessageDialog</span><span class="s2">(</span><span class="s0">null</span><span class="s2">, </span><span class="s3">&quot;Application Status: ACCEPTED &quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        <span class="s0">else </span><span class="s2">{</span>
+            <span class="s1">JOptionPane</span><span class="s2">.</span><span class="s1">showMessageDialog</span><span class="s2">(</span><span class="s0">null</span><span class="s2">, </span><span class="s3">&quot;Application Status: FOR FURTHER STUDY&quot;</span><span class="s2">);</span>
+
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
